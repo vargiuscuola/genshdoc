@@ -12,7 +12,7 @@ Create a script file for which you want to automate the generation of markdown d
 You can add this comment anywhere in the script, probably better at the top of the file after the shebang line.
 This comment line will act as a directive to inform `genshdoc` GitHub Action that we want documentation extracted from that file.
 
-Then create a workflow referencing `vargiuscuola/genshdoc` in your github repository.
+Then create a workflow referencing `vargiuscuola/genshdoc`.
 For example, put in a workflow with path `.github/workflows/generate-documentation.yml` the following content:
 ```yaml
 name: Generate Documentation
@@ -44,7 +44,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-This will trigger the generation of markdown documentation for every shell script in your repository containing the idescribed above (`#github-action genshdoc`).
+This will trigger the generation of markdown documentation for every shell script in your repository containing the directive line described above (`#github-action genshdoc`).
 The documentation is extracted from every script with the help of [shdoc](https://github.com/reconquest/shdoc) and is stored in `REFERENCE-<script name>.md`.
 An index file is also created in `REFERENCE.md`.
 
