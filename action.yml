@@ -1,0 +1,8 @@
+name: 'Generate Documentation'
+description: 'GitHub Action to automatically generate md documentation from bash script with shdoc'
+outputs:
+  result:
+    description: 'Esito'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

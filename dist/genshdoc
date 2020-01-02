@@ -1,0 +1,24 @@
+#!/bin/bash
+
+mkdir -p /opt
+git clone https://github.com/reconquest/shdoc.git /opt/shdoc
+
+declare -A list=()
+while read file; do
+	item="$( basename "$file" )"
+	item="${item%.*}"
+	[ "$item" = shdoc ] && continue
+	echo file=$file item=$item
+	/opt/shdoc/shdoc "$file" >"REFERENCE-$item.md"
+	list["$item"]="$file"
+done < <( find . -type f | grep -Ev '/\.git|\.md$|\.swp|/'"$(basename $0)$" | xargs -n 1 grep -l '#github-action genshdoc' 2>/dev/null )
+
+cat >REFERENCE.md <<EOD
+# Reference
+**Library Files**
+$(
+for item in ${!list[@]}; do
+	echo "* [${list["$item"]#./}](REFERENCE-$item.md)"
+done
+)
+EOD
