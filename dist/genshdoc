@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p /opt
-git clone https://github.com/reconquest/shdoc.git /opt/shdoc
+git clone https://github.com/vargiuscuola/shdoc.git /opt/shdoc
 
 declare -A list=()
 while read file; do
