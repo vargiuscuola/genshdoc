@@ -1,10 +1,10 @@
 # genshdoc
 
-GitHub Action to automatically generate on every git push the markdown documentation extracted with [shdoc](https://github.com/reconquest/shdoc) from the shell scripts contained in the Github repository referencing this action.
+GitHub Action to automatically generate on every git push the markdown documentation extracted with [vargiuscuola/shdoc](https://github.com/vargiuscuola/shdoc) from the shell scripts contained in the Github repository referencing this action.
 
 ## Usage
 
-Create a script file for which you want to automate the generation of markdown documentation extracted from it: write your code and the related documentation in the format described in [shdoc](https://github.com/reconquest/shdoc). Also add inside the script file the following comment:
+Create a script file for which you want to automate the generation of markdown documentation extracted from it: write your code and the related documentation in the format described in [vargiuscuola/shdoc](https://github.com/vargiuscuola/shdoc). Also add inside the script file the following comment:
 ```bash
 #github-action genshdoc
 ```
