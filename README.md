@@ -45,7 +45,7 @@ jobs:
 ```
 
 This will trigger the generation of markdown documentation for every shell script in your repository containing the directive line described above (`#github-action genshdoc`).
-The documentation is extracted from every script with the help of [shdoc](https://github.com/reconquest/shdoc) and is stored in `REFERENCE-<script name>.md`.
+The documentation is extracted from every script with the help of [vargiuscuola/shdoc](https://github.com/vargiuscuola/shdoc) and is stored in `REFERENCE-<script name>.md`.
 An index file is also created in `REFERENCE.md`.
 
 **Be careful!** Any `REFERENCE.md` file and `REFERENCE-<script name>.md` will be owerritten.
